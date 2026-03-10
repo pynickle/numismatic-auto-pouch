@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "numismatic_auto_pouch",
+  "version": "${version}",
+  "name": "Numismatic Auto Pouch",
+  "description": "Automatically stores picked-up coins in money bag for Mod Numismatic Overhaul.",
+  "authors": ["ENC_Euphony"],
+  "contact": {},
+  "license": "AGPL-3.0",
+  "icon": "assets/numismatic_auto_pouch/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.euphony.numismatic_auto_pouch.client.NumismaticAutoPouchClient"
+    ],
+    "main": [
+      "com.euphony.numismatic_auto_pouch.NumismaticAutoPouch"
+    ]
+  },
+  "mixins": [
+    "numismatic_auto_pouch.mixins.json",
+    {
+      "config": "numismatic_auto_pouch.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "numismatic-overhaul": "*"
+  }
+}
