@@ -47,38 +47,18 @@
     [
       "semantic-release-minecraft",
       {
-        "game_versions": ["1.21.11"],
-        "mod_loaders": "${ loader }",
-        "display_name": "[${ name } 1.21.11] ${ nextRelease.version }",
-        "glob": "${ loader }/build/libs/better_client-${ loader }-${ nextRelease.version }.jar",
-        "dependencies": [
-          {
-            "slug": "architectury-api",
-            "type": "required"
-          },
-          {
-            "slug": "yacl",
-            "type": "optional"
-          }
-        ],
-        "strategies": [
-          {
-            "loader": "fabric",
-            "name": "Fabric"
-          },
-          {
-            "loader": "neoforge",
-            "name": "NeoForge"
-          }
-        ],
+        "game_versions": ["1.20.1"],
+        "mod_loaders": "fabric",
+        "display_name": "[Fabric 1.20.1] ${ nextRelease.version }",
+        "glob": "build/libs/Numismatic-Auto-Pouch-${ nextRelease.version }.jar",
         "curseforge": {
           "project_id": "1482836",
           "java_versions": 21,
-          "environments": "client"
+          "environments": ["client", "server"]
         },
         "modrinth": {
           "project_id": "2JCwfLJX",
-          "version_number": "${ nextRelease.version }+${ loader }"
+          "version_number": "${ nextRelease.version }+fabric"
         }
       }
     ]
